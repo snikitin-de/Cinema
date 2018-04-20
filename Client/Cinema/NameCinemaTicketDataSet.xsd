@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NameCinemaTicketDataSet" targetNamespace="http://tempuri.org/NameCinemaTicketDataSet.xsd" xmlns:mstns="http://tempuri.org/NameCinemaTicketDataSet.xsd" xmlns="http://tempuri.org/NameCinemaTicketDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CinemaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CinemaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Cinema.Properties.Settings.GlobalReference.Default.CinemaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Свободные_местаTableAdapter" GeneratorDataComponentClassName="Свободные_местаTableAdapter" Name="Свободные_места" UserDataComponentName="Свободные_местаTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CinemaConnectionString (Settings)" DbObjectName="Cinema.dbo.Свободные_места" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Название_фильма FROM dbo.Свободные_места</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Название_фильма" DataSetColumn="Название_фильма" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NameCinemaTicketDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NameCinemaTicketDataSet" msprop:Generator_UserDSName="NameCinemaTicketDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Свободные_места" msprop:Generator_TableClassName="Свободные_местаDataTable" msprop:Generator_TableVarName="tableСвободные_места" msprop:Generator_TablePropName="Свободные_места" msprop:Generator_RowDeletingName="Свободные_местаRowDeleting" msprop:Generator_RowChangingName="Свободные_местаRowChanging" msprop:Generator_RowEvHandlerName="Свободные_местаRowChangeEventHandler" msprop:Generator_RowDeletedName="Свободные_местаRowDeleted" msprop:Generator_UserTableName="Свободные_места" msprop:Generator_RowChangedName="Свободные_местаRowChanged" msprop:Generator_RowEvArgName="Свободные_местаRowChangeEvent" msprop:Generator_RowClassName="Свободные_местаRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Название_фильма" msprop:Generator_ColumnVarNameInTable="columnНазвание_фильма" msprop:Generator_ColumnPropNameInRow="Название_фильма" msprop:Generator_ColumnPropNameInTable="Название_фильмаColumn" msprop:Generator_UserColumnName="Название_фильма">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

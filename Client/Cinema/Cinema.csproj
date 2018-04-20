@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F39D909E-9604-4CA1-AD2D-F91B249511AE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Cinema</RootNamespace>
+    <AssemblyName>Cinema</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CinemaNameDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CinemaNameDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClientDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CountOfTicketDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountOfTicketDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeNameDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeNameDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EquipmentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FilmDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FilmDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HallDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HallDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HallNumberDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HallNumberDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HallWithoutFilmDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HallWithoutFilmDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LicenseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LisenseListDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LisenseListDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NameCinemaTicketDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NameCinemaTicketDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlaceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceInHallDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlaceInHallDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PostDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PostTitleDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostTitleDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalariesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalariesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SessionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SessionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SessionHallDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SessionHallDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SessionInHallDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SessionInHallDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ShowFilmDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShowFilmDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ShowingFilmDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShowingFilmDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SoldTicketsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoldTicketsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TicketDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TicketDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TopCashierDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TopCashierDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TopClientDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TopClientDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TopFilmDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TopFilmDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerHallDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkerHallDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Client.rdlc" />
+    <EmbeddedResource Include="CountOfTickets.rdlc" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreeHall.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SoldTicket.rdlc" />
+    <EmbeddedResource Include="TopCashier.rdlc" />
+    <EmbeddedResource Include="TopFilm.rdlc" />
+    <None Include="CinemaNameDataSet.xsc">
+      <DependentUpon>CinemaNameDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CinemaNameDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CinemaNameDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CinemaNameDataSet.xss">
+      <DependentUpon>CinemaNameDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ClientDataSet.xsc">
+      <DependentUpon>ClientDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ClientDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClientDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClientDataSet.xss">
+      <DependentUpon>ClientDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CountOfTicketDataSet.xsc">
+      <DependentUpon>CountOfTicketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CountOfTicketDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CountOfTicketDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CountOfTicketDataSet.xss">
+      <DependentUpon>CountOfTicketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmployeeNameDataSet.xsc">
+      <DependentUpon>EmployeeNameDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmployeeNameDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeeNameDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EmployeeNameDataSet.xss">
+      <DependentUpon>EmployeeNameDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EquipmentDataSet.xsc">
+      <DependentUpon>EquipmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EquipmentDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EquipmentDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EquipmentDataSet.xss">
+      <DependentUpon>EquipmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FilmDataSet.xsc">
+      <DependentUpon>FilmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FilmDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FilmDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FilmDataSet.xss">
+      <DependentUpon>FilmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HallDataSet.xsc">
+      <DependentUpon>HallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HallDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HallDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HallDataSet.xss">
+      <DependentUpon>HallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HallNumberDataSet.xsc">
+      <DependentUpon>HallNumberDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HallNumberDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HallNumberDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HallNumberDataSet.xss">
+      <DependentUpon>HallNumberDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HallWithoutFilmDataSet.xsc">
+      <DependentUpon>HallWithoutFilmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HallWithoutFilmDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HallWithoutFilmDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HallWithoutFilmDataSet.xss">
+      <DependentUpon>HallWithoutFilmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LicenseDataSet.xsc">
+      <DependentUpon>LicenseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LicenseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LicenseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LicenseDataSet.xss">
+      <DependentUpon>LicenseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LisenseListDataSet.xsc">
+      <DependentUpon>LisenseListDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LisenseListDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LisenseListDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LisenseListDataSet.xss">
+      <DependentUpon>LisenseListDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NameCinemaTicketDataSet.xsc">
+      <DependentUpon>NameCinemaTicketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NameCinemaTicketDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NameCinemaTicketDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NameCinemaTicketDataSet.xss">
+      <DependentUpon>NameCinemaTicketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="PlaceDataSet.xsc">
+      <DependentUpon>PlaceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PlaceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PlaceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PlaceDataSet.xss">
+      <DependentUpon>PlaceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PlaceInHallDataSet.xsc">
+      <DependentUpon>PlaceInHallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PlaceInHallDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PlaceInHallDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PlaceInHallDataSet.xss">
+      <DependentUpon>PlaceInHallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PostDataSet.xsc">
+      <DependentUpon>PostDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PostDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PostDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PostDataSet.xss">
+      <DependentUpon>PostDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PostTitleDataSet.xsc">
+      <DependentUpon>PostTitleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PostTitleDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PostTitleDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PostTitleDataSet.xss">
+      <DependentUpon>PostTitleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SalariesDataSet.xsc">
+      <DependentUpon>SalariesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SalariesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SalariesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SalariesDataSet.xss">
+      <DependentUpon>SalariesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SessionDataSet.xsc">
+      <DependentUpon>SessionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SessionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SessionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SessionDataSet.xss">
+      <DependentUpon>SessionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SessionHallDataSet.xsc">
+      <DependentUpon>SessionHallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SessionHallDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SessionHallDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SessionHallDataSet.xss">
+      <DependentUpon>SessionHallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SessionInHallDataSet.xsc">
+      <DependentUpon>SessionInHallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SessionInHallDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SessionInHallDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SessionInHallDataSet.xss">
+      <DependentUpon>SessionInHallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ShowFilmDataSet.xsc">
+      <DependentUpon>ShowFilmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ShowFilmDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShowFilmDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ShowFilmDataSet.xss">
+      <DependentUpon>ShowFilmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ShowingFilmDataSet.xsc">
+      <DependentUpon>ShowingFilmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ShowingFilmDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShowingFilmDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ShowingFilmDataSet.xss">
+      <DependentUpon>ShowingFilmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SoldTicketsDataSet.xsc">
+      <DependentUpon>SoldTicketsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SoldTicketsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SoldTicketsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SoldTicketsDataSet.xss">
+      <DependentUpon>SoldTicketsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TicketDataSet.xsc">
+      <DependentUpon>TicketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TicketDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TicketDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TicketDataSet.xss">
+      <DependentUpon>TicketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TopCashierDataSet.xsc">
+      <DependentUpon>TopCashierDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TopCashierDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TopCashierDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TopCashierDataSet.xss">
+      <DependentUpon>TopCashierDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TopClientDataSet.xsc">
+      <DependentUpon>TopClientDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TopClientDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TopClientDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TopClientDataSet.xss">
+      <DependentUpon>TopClientDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TopFilmDataSet.xsc">
+      <DependentUpon>TopFilmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TopFilmDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TopFilmDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TopFilmDataSet.xss">
+      <DependentUpon>TopFilmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WorkerDataSet.xsc">
+      <DependentUpon>WorkerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WorkerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WorkerDataSet.xss">
+      <DependentUpon>WorkerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WorkerHallDataSet.xsc">
+      <DependentUpon>WorkerHallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WorkerHallDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkerHallDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WorkerHallDataSet.xss">
+      <DependentUpon>WorkerHallDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

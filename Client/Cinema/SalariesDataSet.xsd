@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SalariesDataSet" targetNamespace="http://tempuri.org/SalariesDataSet.xsd" xmlns:mstns="http://tempuri.org/SalariesDataSet.xsd" xmlns="http://tempuri.org/SalariesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CinemaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CinemaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Cinema.Properties.Settings.GlobalReference.Default.CinemaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Зарплаты_сотрудниковTableAdapter" GeneratorDataComponentClassName="Зарплаты_сотрудниковTableAdapter" Name="Зарплаты_сотрудников" UserDataComponentName="Зарплаты_сотрудниковTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CinemaConnectionString (Settings)" DbObjectName="Cinema.dbo.Зарплаты_сотрудников" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ФИО_сотрудника, Зарплата FROM dbo.Зарплаты_сотрудников</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ФИО_сотрудника" DataSetColumn="ФИО_сотрудника" />
+              <Mapping SourceColumn="Зарплата" DataSetColumn="Зарплата" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SalariesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SalariesDataSet" msprop:Generator_UserDSName="SalariesDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Зарплаты_сотрудников" msprop:Generator_TableClassName="Зарплаты_сотрудниковDataTable" msprop:Generator_TableVarName="tableЗарплаты_сотрудников" msprop:Generator_TablePropName="Зарплаты_сотрудников" msprop:Generator_RowDeletingName="Зарплаты_сотрудниковRowDeleting" msprop:Generator_RowChangingName="Зарплаты_сотрудниковRowChanging" msprop:Generator_RowEvHandlerName="Зарплаты_сотрудниковRowChangeEventHandler" msprop:Generator_RowDeletedName="Зарплаты_сотрудниковRowDeleted" msprop:Generator_UserTableName="Зарплаты_сотрудников" msprop:Generator_RowChangedName="Зарплаты_сотрудниковRowChanged" msprop:Generator_RowEvArgName="Зарплаты_сотрудниковRowChangeEvent" msprop:Generator_RowClassName="Зарплаты_сотрудниковRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ФИО_сотрудника" msprop:Generator_ColumnVarNameInTable="columnФИО_сотрудника" msprop:Generator_ColumnPropNameInRow="ФИО_сотрудника" msprop:Generator_ColumnPropNameInTable="ФИО_сотрудникаColumn" msprop:Generator_UserColumnName="ФИО_сотрудника">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Зарплата" msprop:Generator_ColumnVarNameInTable="columnЗарплата" msprop:Generator_ColumnPropNameInRow="Зарплата" msprop:Generator_ColumnPropNameInTable="ЗарплатаColumn" msprop:Generator_UserColumnName="Зарплата" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

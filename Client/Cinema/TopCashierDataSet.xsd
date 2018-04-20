@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TopCashierDataSet" targetNamespace="http://tempuri.org/TopCashierDataSet.xsd" xmlns:mstns="http://tempuri.org/TopCashierDataSet.xsd" xmlns="http://tempuri.org/TopCashierDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CinemaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CinemaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Cinema.Properties.Settings.GlobalReference.Default.CinemaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Топ_кассировTableAdapter" GeneratorDataComponentClassName="Топ_кассировTableAdapter" Name="Топ_кассиров" UserDataComponentName="Топ_кассировTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CinemaConnectionString (Settings)" DbObjectName="Cinema.dbo.Топ_кассиров" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ФИО_сотрудника, Количество_билетов FROM dbo.Топ_кассиров</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ФИО_сотрудника" DataSetColumn="ФИО_сотрудника" />
+              <Mapping SourceColumn="Количество_билетов" DataSetColumn="Количество_билетов" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TopCashierDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TopCashierDataSet" msprop:Generator_UserDSName="TopCashierDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Топ_кассиров" msprop:Generator_TableClassName="Топ_кассировDataTable" msprop:Generator_TableVarName="tableТоп_кассиров" msprop:Generator_TablePropName="Топ_кассиров" msprop:Generator_RowDeletingName="Топ_кассировRowDeleting" msprop:Generator_RowChangingName="Топ_кассировRowChanging" msprop:Generator_RowEvHandlerName="Топ_кассировRowChangeEventHandler" msprop:Generator_RowDeletedName="Топ_кассировRowDeleted" msprop:Generator_UserTableName="Топ_кассиров" msprop:Generator_RowChangedName="Топ_кассировRowChanged" msprop:Generator_RowEvArgName="Топ_кассировRowChangeEvent" msprop:Generator_RowClassName="Топ_кассировRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ФИО_сотрудника" msprop:Generator_ColumnVarNameInTable="columnФИО_сотрудника" msprop:Generator_ColumnPropNameInRow="ФИО_сотрудника" msprop:Generator_ColumnPropNameInTable="ФИО_сотрудникаColumn" msprop:Generator_UserColumnName="ФИО_сотрудника">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Количество_билетов" msprop:Generator_ColumnVarNameInTable="columnКоличество_билетов" msprop:Generator_ColumnPropNameInRow="Количество_билетов" msprop:Generator_ColumnPropNameInTable="Количество_билетовColumn" msprop:Generator_UserColumnName="Количество_билетов" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

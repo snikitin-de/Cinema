@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TopFilmDataSet" targetNamespace="http://tempuri.org/TopFilmDataSet.xsd" xmlns:mstns="http://tempuri.org/TopFilmDataSet.xsd" xmlns="http://tempuri.org/TopFilmDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CinemaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CinemaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Cinema.Properties.Settings.GlobalReference.Default.CinemaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Топ_фильмовTableAdapter" GeneratorDataComponentClassName="Топ_фильмовTableAdapter" Name="Топ_фильмов" UserDataComponentName="Топ_фильмовTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CinemaConnectionString (Settings)" DbObjectName="Cinema.dbo.Топ_фильмов" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Название_фильма, Количество_билетов FROM dbo.Топ_фильмов</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Название_фильма" DataSetColumn="Название_фильма" />
+              <Mapping SourceColumn="Количество_билетов" DataSetColumn="Количество_билетов" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TopFilmDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TopFilmDataSet" msprop:Generator_UserDSName="TopFilmDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Топ_фильмов" msprop:Generator_TableClassName="Топ_фильмовDataTable" msprop:Generator_TableVarName="tableТоп_фильмов" msprop:Generator_TablePropName="Топ_фильмов" msprop:Generator_RowDeletingName="Топ_фильмовRowDeleting" msprop:Generator_RowChangingName="Топ_фильмовRowChanging" msprop:Generator_RowEvHandlerName="Топ_фильмовRowChangeEventHandler" msprop:Generator_RowDeletedName="Топ_фильмовRowDeleted" msprop:Generator_UserTableName="Топ_фильмов" msprop:Generator_RowChangedName="Топ_фильмовRowChanged" msprop:Generator_RowEvArgName="Топ_фильмовRowChangeEvent" msprop:Generator_RowClassName="Топ_фильмовRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Название_фильма" msprop:Generator_ColumnVarNameInTable="columnНазвание_фильма" msprop:Generator_ColumnPropNameInRow="Название_фильма" msprop:Generator_ColumnPropNameInTable="Название_фильмаColumn" msprop:Generator_UserColumnName="Название_фильма">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Количество_билетов" msprop:Generator_ColumnVarNameInTable="columnКоличество_билетов" msprop:Generator_ColumnPropNameInRow="Количество_билетов" msprop:Generator_ColumnPropNameInTable="Количество_билетовColumn" msprop:Generator_UserColumnName="Количество_билетов" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

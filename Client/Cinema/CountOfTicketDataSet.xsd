@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CountOfTicketDataSet" targetNamespace="http://tempuri.org/CountOfTicketDataSet.xsd" xmlns:mstns="http://tempuri.org/CountOfTicketDataSet.xsd" xmlns="http://tempuri.org/CountOfTicketDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CinemaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CinemaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Cinema.Properties.Settings.GlobalReference.Default.CinemaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Кол_билетов_залаTableAdapter" GeneratorDataComponentClassName="Кол_билетов_залаTableAdapter" Name="Кол_билетов_зала" UserDataComponentName="Кол_билетов_залаTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CinemaConnectionString (Settings)" DbObjectName="Cinema.dbo.Кол_билетов_зала" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Номер_зала, Количество_билетов FROM dbo.Кол_билетов_зала</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Номер_зала" DataSetColumn="Номер_зала" />
+              <Mapping SourceColumn="Количество_билетов" DataSetColumn="Количество_билетов" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CountOfTicketDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CountOfTicketDataSet" msprop:Generator_UserDSName="CountOfTicketDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Кол_билетов_зала" msprop:Generator_TableClassName="Кол_билетов_залаDataTable" msprop:Generator_TableVarName="tableКол_билетов_зала" msprop:Generator_TablePropName="Кол_билетов_зала" msprop:Generator_RowDeletingName="Кол_билетов_залаRowDeleting" msprop:Generator_RowChangingName="Кол_билетов_залаRowChanging" msprop:Generator_RowEvHandlerName="Кол_билетов_залаRowChangeEventHandler" msprop:Generator_RowDeletedName="Кол_билетов_залаRowDeleted" msprop:Generator_UserTableName="Кол_билетов_зала" msprop:Generator_RowChangedName="Кол_билетов_залаRowChanged" msprop:Generator_RowEvArgName="Кол_билетов_залаRowChangeEvent" msprop:Generator_RowClassName="Кол_билетов_залаRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Номер_зала" msprop:Generator_ColumnVarNameInTable="columnНомер_зала" msprop:Generator_ColumnPropNameInRow="Номер_зала" msprop:Generator_ColumnPropNameInTable="Номер_залаColumn" msprop:Generator_UserColumnName="Номер_зала" type="xs:int" />
+              <xs:element name="Количество_билетов" msprop:Generator_ColumnVarNameInTable="columnКоличество_билетов" msprop:Generator_ColumnPropNameInRow="Количество_билетов" msprop:Generator_ColumnPropNameInTable="Количество_билетовColumn" msprop:Generator_UserColumnName="Количество_билетов" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

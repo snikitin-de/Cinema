@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TopClientDataSet" targetNamespace="http://tempuri.org/TopClientDataSet.xsd" xmlns:mstns="http://tempuri.org/TopClientDataSet.xsd" xmlns="http://tempuri.org/TopClientDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CinemaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CinemaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Cinema.Properties.Settings.GlobalReference.Default.CinemaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Топ_клиентовTableAdapter" GeneratorDataComponentClassName="Топ_клиентовTableAdapter" Name="Топ_клиентов" UserDataComponentName="Топ_клиентовTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CinemaConnectionString (Settings)" DbObjectName="Cinema.dbo.Топ_клиентов" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ФИО_клиента, Количество_билетов FROM dbo.Топ_клиентов</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ФИО_клиента" DataSetColumn="ФИО_клиента" />
+              <Mapping SourceColumn="Количество_билетов" DataSetColumn="Количество_билетов" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TopClientDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TopClientDataSet" msprop:Generator_UserDSName="TopClientDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Топ_клиентов" msprop:Generator_TableClassName="Топ_клиентовDataTable" msprop:Generator_TableVarName="tableТоп_клиентов" msprop:Generator_TablePropName="Топ_клиентов" msprop:Generator_RowDeletingName="Топ_клиентовRowDeleting" msprop:Generator_RowChangingName="Топ_клиентовRowChanging" msprop:Generator_RowEvHandlerName="Топ_клиентовRowChangeEventHandler" msprop:Generator_RowDeletedName="Топ_клиентовRowDeleted" msprop:Generator_UserTableName="Топ_клиентов" msprop:Generator_RowChangedName="Топ_клиентовRowChanged" msprop:Generator_RowEvArgName="Топ_клиентовRowChangeEvent" msprop:Generator_RowClassName="Топ_клиентовRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ФИО_клиента" msprop:Generator_ColumnVarNameInTable="columnФИО_клиента" msprop:Generator_ColumnPropNameInRow="ФИО_клиента" msprop:Generator_ColumnPropNameInTable="ФИО_клиентаColumn" msprop:Generator_UserColumnName="ФИО_клиента">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Количество_билетов" msprop:Generator_ColumnVarNameInTable="columnКоличество_билетов" msprop:Generator_ColumnPropNameInRow="Количество_билетов" msprop:Generator_ColumnPropNameInTable="Количество_билетовColumn" msprop:Generator_UserColumnName="Количество_билетов" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
