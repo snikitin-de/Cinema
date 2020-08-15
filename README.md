@@ -17,4 +17,4 @@ The purpose of this project is to create an automated system for cinemas, which 
 
 Database scheme (Схема базы данных):
 
-![Database scheme](https://github.com/snikitin-de/Cinema/raw/db-scheme-documents-add/DB-scheme.png)
+![Database scheme](https://github.com/snikitin-de/Cinema/raw/master/DB-scheme.png)
