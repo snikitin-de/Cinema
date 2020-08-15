@@ -12,3 +12,9 @@ The purpose of this project is to create an automated system for cinemas, which 
 Целью данного проекта является создание автоматизированной системы для кинотеатра, которая включает в себя серверную часть в виде БД (MS SQL) и клиентскую часть - приложение WinForms на .Net с использованием ADO.NET.
 
 ![Главное окно программы](https://github.com/snikitin-de/Cinema/raw/master/Cinema.png)
+
+## Database (База данных)
+
+Database scheme (Схема базы данных):
+
+![Database scheme](https://github.com/snikitin-de/Cinema/raw/master/DB-scheme.png)
