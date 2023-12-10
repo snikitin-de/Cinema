@@ -72,6 +72,8 @@ namespace Cinema
             // TODO: данная строка кода позволяет загрузить данные в таблицу "clientDataSet.Клиент". При необходимости она может быть перемещена или удалена.
             this.клиентTableAdapter.Fill(this.clientDataSet.Клиент);
 
+            DateTime dateNow = DateTime.Now;
+
             dtmTimeSession.CustomFormat = "dd.MM.yyyy HH:mm";
             dtmTimeSessionHall.CustomFormat = "dd.MM.yyyy HH:mm";
             dgvwTicket.Columns[2].DefaultCellStyle.Format = "dd.MM.yyyy HH:mm:ss";
@@ -81,18 +83,18 @@ namespace Cinema
             dgvwAcquisitionLicense.Columns[2].DefaultCellStyle.Format = "yyyy";
             dgvwShowingFilm.Columns[2].DefaultCellStyle.Format = "yyyy";
             dgvwSoldTickets.Columns[1].DefaultCellStyle.Format = "yyyy";
-            numYearFilm.Maximum = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearFilm.Value = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearSession.Maximum = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearSession.Value = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearSessionHall.Maximum = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearSessionHall.Value = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearFilmShowFilm.Maximum = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearFilmShowFilm.Value = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearFilmAcquisitionLicense.Maximum = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearFilmAcquisitionLicense.Value = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearFilmShowing.Maximum = Decimal.Parse(DateTime.Now.Year.ToString());
-            numYearFilmShowing.Value = Decimal.Parse(DateTime.Now.Year.ToString());
+            numYearFilm.Maximum = dateNow.Year;
+            numYearFilm.Value = dateNow.Year;
+            numYearSession.Maximum = dateNow.Year;
+            numYearSession.Value = dateNow.Year;
+            numYearSessionHall.Maximum = dateNow.Year;
+            numYearSessionHall.Value = dateNow.Year;
+            numYearFilmShowFilm.Maximum = dateNow.Year;
+            numYearFilmShowFilm.Value = dateNow.Year;
+            numYearFilmAcquisitionLicense.Maximum = dateNow.Year;
+            numYearFilmAcquisitionLicense.Value = dateNow.Year;
+            numYearFilmShowing.Maximum = dateNow.Year;
+            numYearFilmShowing.Value = dateNow.Year;
             this.reportViewer2.RefreshReport();
             this.reportViewer2.RefreshReport();
             this.reportViewer3.RefreshReport();
@@ -106,12 +108,12 @@ namespace Cinema
             cboRatingFilmShowsFilm.SelectedIndex = 0;
             cboTypeClient.SelectedIndex = 0;
             cboEquipmentFormat.SelectedIndex = 0;
-            dtmTimeSession.MaxDate = DateTime.Parse($"{(DateTime.Now.Day + 7).ToString()}.{DateTime.Now.Month.ToString()}.{DateTime.Now.Year.ToString()}");
-            dtmTimeSession.MinDate = DateTime.Parse($"{DateTime.Now.Day.ToString()}.{DateTime.Now.Month.ToString()}.{DateTime.Now.Year.ToString()} {DateTime.Now.Hour}:{DateTime.Now.Minute}");
-            dtmTimeSessionHall.MaxDate = DateTime.Parse($"{(DateTime.Now.Day + 7).ToString()}.{DateTime.Now.Month.ToString()}.{DateTime.Now.Year.ToString()}");
-            dtmTimeSessionHall.MinDate = DateTime.Parse($"{DateTime.Now.Day.ToString()}.{DateTime.Now.Month.ToString()}.{DateTime.Now.Year.ToString()} {DateTime.Now.Hour}:{DateTime.Now.Minute}");
-            dtmLicenseValidityPeriod.MaxDate = DateTime.Parse($"31.12.2099");
-            dtmLicenseValidityPeriod.MinDate = DateTime.Parse($"{DateTime.Now.Day.ToString()}.{DateTime.Now.Month.ToString()}.{DateTime.Now.Year.ToString()}");
+            dtmTimeSession.MaxDate = dateNow.AddDays(7);
+            dtmTimeSession.MinDate = dateNow;
+            dtmTimeSessionHall.MaxDate = dateNow.AddDays(7);
+            dtmTimeSessionHall.MinDate = dateNow;
+            dtmLicenseValidityPeriod.MaxDate = DateTime.MaxValue.AddYears(-2);
+            dtmLicenseValidityPeriod.MinDate = dateNow;
 
             /*Фильм по умолчанию*/
             try
@@ -3442,20 +3444,26 @@ namespace Cinema
 
         private void dtmTimeSession_Enter(object sender, EventArgs e)
         {
-            dtmTimeSession.MaxDate = DateTime.Parse($"{(DateTime.Now.Day + 7).ToString()}.{DateTime.Now.Month.ToString()}.{DateTime.Now.Year.ToString()}");
-            dtmTimeSession.MinDate = DateTime.Parse($"{DateTime.Now.Day.ToString()}.{DateTime.Now.Month.ToString()}.{DateTime.Now.Year.ToString()} {DateTime.Now.Hour}:{DateTime.Now.Minute}");
+            DateTime dateNow = DateTime.Now;
+
+            dtmTimeSession.MaxDate = dateNow.AddDays(7);
+            dtmTimeSession.MinDate = dateNow;
         }
 
         private void dtmTimeSessionHall_Enter(object sender, EventArgs e)
         {
-            dtmTimeSessionHall.MaxDate = DateTime.Parse($"{(DateTime.Now.Day + 7).ToString()}.{DateTime.Now.Month.ToString()}.{DateTime.Now.Year.ToString()}");
-            dtmTimeSessionHall.MinDate = DateTime.Parse($"{DateTime.Now.Day.ToString()}.{DateTime.Now.Month.ToString()}.{DateTime.Now.Year.ToString()} {DateTime.Now.Hour}:{DateTime.Now.Minute}");
+            DateTime dateNow = DateTime.Now;
+
+            dtmTimeSessionHall.MaxDate = dateNow.AddDays(7);
+            dtmTimeSessionHall.MinDate = dateNow;
         }     
             
         private void dtmLicenseValidityPeriod_Enter(object sender, EventArgs e)
         {
-            dtmLicenseValidityPeriod.MaxDate = DateTime.Parse($"31.12.2099");
-            dtmLicenseValidityPeriod.MinDate = DateTime.Parse($"{DateTime.Now.Day.ToString()}.{DateTime.Now.Month.ToString()}.{DateTime.Now.Year.ToString()}");
+            DateTime dateNow = DateTime.Now;
+
+            dtmLicenseValidityPeriod.MaxDate = dateNow.AddDays(7);
+            dtmLicenseValidityPeriod.MinDate = dateNow;
         }
     }
 }
